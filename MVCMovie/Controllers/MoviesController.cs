@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVCMovie.Data;
-using MvcMovie.Models;
+using MVCMovie.Models;
 
 namespace MVCMovie.Controllers
 {

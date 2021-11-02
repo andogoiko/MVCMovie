@@ -19,7 +19,7 @@ namespace MVCMovie.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MvcMovie.Models.Movie", b =>
+            modelBuilder.Entity("MVCMovie.Models.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
