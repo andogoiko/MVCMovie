@@ -7,7 +7,12 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Movie</h4>
+    <h4>Movie @{if ((bool)ViewData["mostrarId"])
+
+        {
+
+            <span>#</span>@Model.Id;<span>|</span>}}
+    </h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -39,4 +44,50 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+    @{
+        if ((bool)ViewData["mostrarId"])
+        {
+            if ((bool)ViewData["BlokearPrev"])
+            {
+                <span>Prev</span>
+            }
+            else
+            {
+                <a asp-action="Details" asp-route-id="@ViewData["prev"]" asp-route-mostrarId="true" asp-route-TF="false">Prev</a>
+            }
+
+            <span>|</span><span>#</span>@Model.Id;<span>|</span>
+            if ((bool)ViewData["BlokearNext"])
+            {
+                <span>Next</span>
+            }
+            else
+            {
+                <a asp-action="Details" asp-route-id="@ViewData["next"]" asp-route-mostrarId="true" asp-route-TF="true">Next</a>
+            }
+        }
+        else
+        {
+
+
+            if ((bool)ViewData["BlokearPrev"])
+            {
+                <span>Prev</span>
+            }
+            else
+            {
+                <a asp-action="Details" asp-route-id="@ViewData["prev"]" asp-route-TF="false">Prev</a>
+
+            }
+            if ((bool)ViewData["BlokearNext"])
+            {
+                <span>Next</span>
+            }
+            else
+            {
+                <a asp-action="Details" asp-route-id="@ViewData["next"]" asp-route-mostrarId="false" asp-route-TF="true">Next</a>
+            }
+
+        }
+    }
 </div>
